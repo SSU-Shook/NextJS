@@ -10,8 +10,12 @@ npm i
 */
 
 /*
-prisma 관련 업데이트 후 아래 명령어 시행하기
+schema.prisma 관련 업데이트 후 아래 명령어 시행하기
 
-npx prisma migrate dev --preview-feature
+먼저 /prisma/migrations에 있는 파일 삭제
+npx prisma migrate dev --preview-feature 명령어 시행
+y누르고 이름은 전꺼에 +1 (ex. 삭제한 파일이 db2였다면 db3)
+
+좀 더 좋은 방법이 있을 것 같긴 한데.. 찾는 중..
 
 */
