@@ -4,21 +4,14 @@ import { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
 import { handleLogout } from "@/lib/action";
-import Image from "next/image";
-
-const links = [];
 
 const Links = ({ session }) => {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className={styles.container}>
       <div className={styles.links}>
-        {links.map((link) => (
-          <NavLink item={link} key={link.title} />
-        ))}
         {session?.user ? (
           <>
+            <NavLink item={{ title: "My Page", path: "/mypage" }} />
             {session.user?.isAdmin && (
               <NavLink item={{ title: "Admin", path: "/admin" }} />
             )}
@@ -30,21 +23,6 @@ const Links = ({ session }) => {
           <NavLink item={{ title: "Login", path: "/login" }} />
         )}
       </div>
-      <Image
-        className={styles.menuButton}
-        src="/menu.png"
-        alt=""
-        width={30}
-        height={30}
-        onClick={() => setOpen((prev) => !prev)}
-      />
-      {open && (
-        <div className={styles.mobileLinks}>
-          {links.map((link) => (
-            <NavLink item={link} key={link.title} />
-          ))}
-        </div>
-      )}
     </div>
   );
 };
