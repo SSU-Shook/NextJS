@@ -1,6 +1,6 @@
 import { getSession } from "@auth0/nextjs-auth0";
 
-export default async function handler(req, res) {
+export default async function solution(req, res) {
   if (req.method !== "GET") {
     res.setHeader("Allow", ["GET"]);
     return res.status(405).end(`Method ${req.method} Not Allowed`);

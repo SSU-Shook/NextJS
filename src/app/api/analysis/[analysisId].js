@@ -16,7 +16,7 @@ export default async function checkAnalysis(req, res) {
         const formattedResult = {
           analysisId: analysisId,
           status: analysisResult.status,
-          vulnerabilities: analysisResult.vulnerabilities,
+          vulnerabilities: analysisResult.vulnerabilities, //It's array in DB
         };
         res.status(200).json(formattedResult);
       } else {

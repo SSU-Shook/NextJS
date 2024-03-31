@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function analysisRequest(req, res) {
   if (req.method == "POST") {
-    const { code, framework, tool } = req.body;
+    const { code, framework } = req.body;
     const analysisId = uuidv4();
 
     const decodedCode = Buffer.from(code, "base64").toString("utf-8");
@@ -12,6 +12,7 @@ export default function analysisRequest(req, res) {
       analysisId: analysisId,
       status: "Submitted",
       message: "Successfully requested.",
+      responseStatusCode: 200,
     });
   } else {
     res.setHeader("Allow", ["POST"]);
@@ -19,18 +20,15 @@ export default function analysisRequest(req, res) {
   }
 }
 
-/* POST BODY part
-const code = btoa('put the code here'); //gonna be changed to ASCII code of encoding base64
-
+/* 
 fetch('http://localhost:3000/app/api/analysis', {
   method: 'POST', 
   headers: {
     'Content-Type': 'application/json', 
   },
   body: JSON.stringify({
-    code: code,
+    code: aabb,
     framework: 'flask',
-    tool: 'codeql'
   })
 })
 .then(response => response.json())
