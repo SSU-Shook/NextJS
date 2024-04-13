@@ -12,13 +12,15 @@
     "@prisma/client": "^5.11.0",
     "bcryptjs": "^2.4.3",
     "install": "^0.13.0",
-    "mongoose": "^8.0.0",
     "next": "14.0.4",
     "next-auth": "^5.0.0-beta.16",
     "npm": "^10.2.5",
+    "postinstall": "^0.10.3",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "^0.33.2"
+    "react-js-pagination": "^3.0.3",
+    "sqlite3": "^5.1.7",
+    "tar": "^6.2.1"
   },
   "devDependencies": {
     "eslint": "^8",
