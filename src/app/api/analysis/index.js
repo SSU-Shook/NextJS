@@ -19,19 +19,3 @@ export default function analysisRequest(req, res) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
-
-/* 
-fetch('http://localhost:3000/app/api/analysis', {
-  method: 'POST', 
-  headers: {
-    'Content-Type': 'application/json', 
-  },
-  body: JSON.stringify({
-    code: aabb,
-    framework: 'flask',
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch((error) => console.error('Error:', error));
-*/
