@@ -5,6 +5,9 @@ export const authConfig = {
   jwt: {
     secret: "as12k245",
   },
+  session: {
+    maxAge: 60 * 60,
+  },
   providers: [],
   callbacks: {
     async jwt({ token, user }) {
